@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Edukator.BusinessLayer.Abstract;
+using Edukator.BusinessLayer.Concrete;
+using Edukator.DataAccessLayer.Abstract;
+using Edukator.DataAccessLayer.Concrete;
+using Edukator.DataAccessLayer.EntityFramework;
 
 namespace Edukator.PresentationLayer
 {
@@ -23,6 +28,11 @@ namespace Edukator.PresentationLayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>();//11 injection eklendý
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<ICategoryService, CategoryManager>();//baglandý
+
+
             services.AddControllersWithViews();
         }
 
