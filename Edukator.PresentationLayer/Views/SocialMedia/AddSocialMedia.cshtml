@@ -1,0 +1,29 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-sm-12 col-xl-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">sosyal medya giriş</h6>
+        <form method="post">
+            <div class="mb-3">
+                <label for="SocialmediaName" class="form-label">Başlık</label>
+                <input type="text" class="form-control" id="SocialmediaName" asp-for="SocialMediaName">
+                
+            </div>
+            <div class="mb-3">
+                <label for="SocialmediaIcon" class="form-label">İkon</label>
+                <input type="text" class="form-control" id="SocialMediaIcon" asp-for="SocialMediaIcon">
+            </div>
+            <div class="mb-3">
+                <label for="SocialMediaUrl" class="form-label">Url</label>
+                <input type="text" class="form-control" id="SocialMediaUrl" asp-for="SocialMediaUrl">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </form>
+    </div>
+</div>
+

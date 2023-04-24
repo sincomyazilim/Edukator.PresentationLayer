@@ -31,7 +31,10 @@ namespace Edukator.PresentationLayer
             services.AddDbContext<Context>();//11 injection eklendý
             services.AddScoped<ICategoryDal, EfCategoryDal>();
             services.AddScoped<ICategoryService, CategoryManager>();//baglandý
-
+            services.AddScoped<ICourseDal, EfCourseDal>();
+            services.AddScoped<ICourseService, CourseManager>();//baglandý
+            services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();//baglandý
 
             services.AddControllersWithViews();
         }
